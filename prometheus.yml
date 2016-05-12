@@ -1,0 +1,12 @@
+global:
+  external_labels:
+      monitor: 'monitor'
+
+rule_files:
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    target_groups:
+      - targets: ['localhost:9090', 'prom_haproxy_histogram:9080']
+
